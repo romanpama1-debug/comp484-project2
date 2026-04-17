@@ -19,12 +19,11 @@ var pet_info = {
 };
 
 function showMessage(msg) {
-  $("#pet-message")
-    .stop(true, true)
-    .text(msg)
-    .fadeIn(100)
-    .delay(500)
-    .fadeOut(200);
+  $("#pet-message").text(msg).show();
+
+  setTimeout(function() {
+    $("#pet-message").hide();
+  }, 800);
 }
 
 // Treat
