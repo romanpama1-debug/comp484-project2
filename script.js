@@ -19,8 +19,13 @@ var pet_info = {
 };
 
 function showMessage(msg) {
+// jQuery Method: show()
+// This method is used to display the pet message when a button is clicked.
   $("#pet-message").text(msg).show();
 
+
+// jQuery Method: hide()
+// This method hides the message after a short delay to keep the interface clean.
   setTimeout(function() {
     $("#pet-message").hide();
   }, 800);
@@ -62,6 +67,11 @@ function clickedExerciseButton() {
 function clickedSleepButton() {
   pet_info.happiness += 1;
   pet_info.weight += 0;
+
+  let sleepSound = document.getElementById("sleep-sound");
+  sleepSound.currentTime = 0;
+  sleepSound.volume = 0.3;
+  sleepSound.play();
 
   showMessage("Zzz... I feel better now.");
 
